@@ -1,0 +1,118 @@
+            .mydiv {
+                text-align: center;
+                height: 237px;
+                width: 179px;
+                margin: 0 auto;
+                margin-top: 20px;
+                opacity: 0.7;
+                display: inline-block;
+            }
+            
+            .container {
+                height: 457px;
+                width: 21%;
+                border: 2px solid black;
+                padding-top: 30px;
+                margin: 0 auto;
+                box-shadow: inset;
+                border-radius: 13px;
+                background-color: gray;
+            }
+            
+            button:hover {
+                opacity: 0.7;
+                background-color: #000000;
+            }
+            
+            input {
+                margin: 0 auto;
+                height: 39px;
+                border-radius: 9px;
+            }
+            
+            body {
+                text-align: center;
+            }
+            
+            .num {
+                margin: 2px;
+                height: 62px;
+                width: 50px;
+                float: left;
+                border: 0px;
+                border-radius: 9px;
+                font-weight: 700;
+            }
+            
+            .operator {
+                height: 62px;
+                width: 50px;
+                border: 0px;
+                float: left;
+                border-radius: 9px;
+                margin: 2px 0;
+                position: relative;
+                left: 3px;
+                font-weight: 700;
+            }
+            
+            #back {
+                height: 40px;
+                width: 86px;
+                float: left;
+                border: 0px;
+                border-radius: 50%;
+            }
+            
+            #clear {
+                width: 40px;
+                height: 40px;
+                position: relative;
+                margin: 10px;
+                margin-top: 10px;
+                margin-right: 20px;
+                border: 0px;
+                border-radius: 50%;
+            }
+            
+            .num:focus,
+            .operator:focus,
+            #clear:focus,
+            #back:focus,
+            .extra:focus,
+            input:focus {
+                outline: none;
+            }
+            
+            .extra {
+                margin: 2px;
+                height: 62px;
+                width: 50px;
+                float: left;
+                border: 0px;
+                border-radius: 9px;
+                font-weight: 700;
+            }
+            
+            .calculator {
+                padding-top: 0px;
+                height: 332px;
+                width: 217px;
+                position: relative;
+                right: 21px;
+                border-radius: 15px;
+                margin-top: 41px;
+            }
+            
+            #minus {
+                font-size: 20px;
+            }
+            
+            #dot {
+                font-size: 18px;
+            }
+            
+            button {
+                background-color: black;
+                color: white;
+            }
