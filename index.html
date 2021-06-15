@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CALCULATOR</title>
+    <style>
+      .mydiv {
+                text-align: center;
+                height: 237px;
+                width: 179px;
+                margin: 0 auto;
+                margin-top: 20px;
+                opacity: 0.7;
+                display: inline-block;
+            }
+
+            .container {
+                height: 457px;
+                width: 21%;
+                border: 2px solid black;
+                padding-top: 30px;
+                margin: 0 auto;
+                box-shadow: inset;
+                border-radius: 13px;
+                background-color: gray;
+            }
+
+            button:hover {
+                opacity: 0.7;
+                background-color: #000000;
+            }
+
+            input {
+                margin: 0 auto;
+                height: 39px;
+                border-radius: 9px;
+            }
+
+            body {
+                text-align: center;
+            }
+
+            .num {
+                margin: 2px;
+                height: 62px;
+                width: 50px;
+                float: left;
+                border: 0px;
+                border-radius: 9px;
+                font-weight: 700;
+            }
+
+            .operator {
+                height: 62px;
+                width: 50px;
+                border: 0px;
+                float: left;
+                border-radius: 9px;
+                margin: 2px 0;
+                position: relative;
+                left: 3px;
+                font-weight: 700;
+            }
+
+            #back {
+                height: 40px;
+                width: 86px;
+                float: left;
+                border: 0px;
+                border-radius: 50%;
+            }
+
+            #clear {
+                width: 40px;
+                height: 40px;
+                position: relative;
+                margin: 10px;
+                margin-top: 10px;
+                margin-right: 20px;
+                border: 0px;
+                border-radius: 50%;
+            }
+
+            .num:focus,
+            .operator:focus,
+            #clear:focus,
+            #back:focus,
+            .extra:focus,
+            input:focus {
+                outline: none;
+            }
+
+            .extra {
+                margin: 2px;
+                height: 62px;
+                width: 50px;
+                float: left;
+                border: 0px;
+                border-radius: 9px;
+                font-weight: 700;
+            }
+
+            .calculator {
+                padding-top: 0px;
+                height: 332px;
+                width: 217px;
+                position: relative;
+                right: 21px;
+                border-radius: 15px;
+                margin-top: 41px;
+            }
+
+            #minus {
+                font-size: 20px;
+            }
+
+            #dot {
+                font-size: 18px;
+            }
+
+            button {
+                background-color: black;
+                color: white;
+            } 
+  </style>
+  <script>
+    
+    </script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="mydiv">
+            <input class="show" type="text" id="showtext" name="">
+            <div class="calculator">
+                <button class="extra" onclick="clean()">
+                C
+                </button>
+                <button class="extra" onclick="backspace()">
+                CE
+            </button>
+                <button class="extra" name="%" onclick="show(name)">
+                %
+            </button>
+                <button class="operator " id='=' onclick="showResult()">
+                =
+            </button>
+                <button class="num" name="7" onclick="show(name)">
+                7
+            </button>
+                <button class="num" name="8" onclick="show(name)">
+                8
+            </button>function show(display) {
+    var myText = document.getElementsByTagName('input');
+    myText[0].value = myText[0].value + display;
+}
+
+function clean() {
+    var text = document.getElementsByTagName('input')
+    text[0].value = " ";
+}
+
+function backspace() {
+    var text = document.getElementById('showtext').value;
+    document.getElementById('showtext').value = text.substring(0, text.length - 1);
+}
+document.getElementsByClassName("mydiv")[0].style.backgroundImage = "url('waterfall.jpeg')";
+document.getElementsByClassName("container")[0].style.backgroundImage = "url('nature.jpg')";
+
+function showResult() {
+    var exp = document.getElementById("showtext").value;
+    var result = eval(exp);
+    document.getElementById("showtext").value = result;
+} 
+                <button class="num" name="9" onclick="show(name)">
+                9
+            </button>
+                <button class="operator" id='/' onclick="show(id)">
+                /
+            </button>
+                <button class="num" name="4" onclick="show(name)">
+                4
+            </button>
+                <button class="num" name="5" onclick="show(name)">
+                5
+            </button>
+                <button class="num" name="6" onclick="show(name)">
+                6
+            </button>
+                <button class="operator" name="*" id='*' onclick=" show(name) ">
+                x
+            </button>
+                <button class="num" name="1" onclick="show(name)">
+                1
+            </button>
+                <button class="num" name="2" onclick="show(name)">
+                2
+            </button>
+                <button class="num" name="3" onclick="show(name)">
+                3
+            </button>
+                <button class="operator" name='-' id='minus' onclick="show(name)">
+                -
+            </button>
+                <button class="num" name="00" onclick="show(name)">
+                00
+            </button>
+                <button class="num" name="0" onclick="show(name)">
+                0
+            </button>
+                <button class="num" name="." id='dot' onclick="show(name)">
+                    .
+            </button>
+                <button class="operator" id=' + ' onclick="show(id)">
+                +
+            </button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript " src="calc.js "></script>
+</body>
+
+</html> 
