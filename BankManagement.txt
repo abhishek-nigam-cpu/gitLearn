@@ -1,0 +1,146 @@
+//Bank Management System
+#include <stdio.h>
+#include <iostream>
+#include <stdlib.h>
+#include <string.h>
+
+using namespace std;
+class bank
+{
+  char name[50];
+  char add[50];
+  char acct[20];
+  long int pin;
+  float am;
+  float s;
+
+
+public:
+    void open();
+    void depo();
+    void with();
+    void display();
+};
+void bank::open()
+{
+
+    cout<<"enter your full name: ";
+    //char a[50];
+    //fgets(a,50,stdin);
+    //strcpy(name,a);
+    cin>>name;
+    cout<<endl<<"enter your address: ";
+   //char b[50];
+    //fgets(b,50,stdin);
+    //strcpy(add,b);
+    cin>>add;
+
+    cout<<endl<<"enter your pin: ";
+    cin>>pin;
+    cout<<endl<<"what types of account do you want for savings press s or current press c :  ";
+    char l;
+    cin>>l;
+    if(l=='s')
+        strcpy(acct,"saving");
+    else
+        strcpy(acct,"current");
+    cout<<endl<<"enter amount for deposit: ";
+    cin>>s;
+    am=s;
+}
+void bank :: depo()
+{
+    float s;
+    cout<<endl<<"enter amount for the deposit: ";
+    cin>>s;
+    am=am+s;
+    cout<<endl<<"now total amount is : "<<am<<endl;
+}
+void bank::with()
+{   lp:
+    float s;
+    cout<<endl<<"enter amount to withdraw: ";
+    cin>>s;
+    if(s>am)
+    {
+        printf("enter amount is greater than present amount please re-enter amount");
+        goto lp;
+    }
+    else{
+        am=am-s;
+        cout<<endl<<"now total amount is left: "<<am<<endl;
+      }
+}
+void bank :: display()
+{
+    cout<<endl<<"your full name is :  ";
+    printf("%s",name);
+    cout<<endl<<"your full address is : ";
+    printf("%s",add);
+    cout<<"\nyour area pin code is : "<<pin;
+    cout<<endl<<"type of account that you opened: "<<acct;
+    cout<<endl<<"intial amount you deposit: "<<s;
+    cout<<endl<<"total amount present in your account: "<<am<<endl<<endl;
+}
+int main()
+{
+    bank b1;
+    int x;
+    char a;
+    do
+    {
+
+       cout<<"for open account   press 1"<<endl;
+       cout<<"for deposit money  press 2"<<endl;
+       cout<<"for withdraw money press 3"<<endl;
+       cout<<"for dispay account press 4"<<endl;
+       cout<<"for exit           press 5"<<endl;
+        cout<<"\nenter your choice ";
+        cin>>x;
+        switch(x)
+        {
+        case 1:
+            {
+                cout<<"open account:"<<endl;
+                b1.open();
+                cout<<endl<<"your account is created"<<endl;
+                break;
+
+            }
+        case 2:
+            {
+                cout<<"deposit amount:"<<endl;
+                b1.depo();
+                break;
+
+
+            }
+        case 3:
+            {
+                cout<<"withraw amount :"<<endl;
+                b1.with();
+                break;
+
+            }
+        case 4:
+            {
+                cout<<endl<<"display account:";
+                b1.display();
+                break;
+
+            }
+        case 5:
+            {
+                exit(0);
+
+            }
+        default:
+            cout<<"you entered wrong choice.... please try again"<<endl;
+        }
+        cout<<"\ndo you want to select next option then press :: y"<<endl;
+        cout<<"If you want to exit the program then press:: n"<<endl;
+        cin>>a;
+    }
+    while(a!='n');
+    return 0;
+}
